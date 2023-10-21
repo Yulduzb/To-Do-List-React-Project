@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import Loading from './components/Loading';
+import ListItem from './components/ListItem';
 
 function App() {
   const [todos,setTodos]=useState(null);
@@ -18,10 +20,10 @@ useEffect(()=>{
 
       <ul>
         {/*Apidan cevap beklerken.Eğer null isa Yülleniyor yazar */}
-        {todos===null && <p>Yükleniyor</p>}
+        {todos === null && <Loading/>}
         {/*eğer todo true isa  todos dizisini map ile döner ve listeler */}
-        {todos?.map((todo)=>
-        <li>{todo.id}</li>)}
+        {todos && todos.map((todo)=>
+        <ListItem todos={todo} key={todo.id}/>)}
       </ul>
 
 
