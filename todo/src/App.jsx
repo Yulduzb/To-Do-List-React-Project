@@ -23,7 +23,7 @@ useEffect(()=>{
         {todos === null && <Loading/>}
         {/*eğer todo true isa  todos dizisini map ile döner ve listeler */}
         {todos && todos.map((todo)=>
-        <ListItem todos={todo} key={todo.id}/>)}
+        <ListItem todos={todo} key={todo.id} allTodos={todos} setTodos={setTodos}/>)}
       </ul>
 
 
