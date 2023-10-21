@@ -1,13 +1,13 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-//axios.defaults.baseURL='http://localhost:3000';
+
 
 const ListItem=({todos,allTodos,setTodos}) => {
     
     /*elemeni silen hem apiden hem listeden silen fonsiyon */
 const HandleDelete=()=>{
-axios.delete(`http://localhost:3000/todos/${todos.id}`)
+axios.delete(`/${todos.id}`)
 .then(()=>{
    const fitered= allTodos.filter((item)=>item.id !== todos.id);
    setTodos(fitered)
@@ -15,7 +15,7 @@ axios.delete(`http://localhost:3000/todos/${todos.id}`)
 .catch(err => alert("Bir hata oluştu..."))
 }
     return (
-        <li className="d-flex justify-content-between aligin-items-center  my-5 ">
+        <li className="d-flex justify-content-between aligin-items-center list-group-item">
             <div className="d-flex gap-2 ">
                 <input className="form-check-input" type="checkbox" />
                 <span>{todos.isDone ? 'Tamamlandı' : 'Devam Ediyor'}</span>
