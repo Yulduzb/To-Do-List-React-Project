@@ -1,10 +1,13 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import {AiOutlineCheck} from 'react-icons/Ai'
+import {AiOutlineClose} from 'react-icons/Ai'
 
 
 
 const ListItem=({todos,allTodos,setTodos}) => {
-    
+    const [isEditMood,setIsEditMood]=useState(false)
     /*elemeni silen hem apiden hem listeden silen fonsiyon */
 const handleDelete=()=>{
 axios.delete(`todos/${todos.id}`)
@@ -34,11 +37,23 @@ const handleChange=()=>{
                 
 
             </div>
-            <span>{todos.title}</span>
+            {isEditMood ? (
+                <form className='d-flex gap-3' >
+                <input type="text" className='form-control shadow' defaultValue={todos.title}/>
+                <button type='Submit' className='btn btn-success px-4 '><AiOutlineCheck/></button>
+                <button className='btn btn-warning px-4'><AiOutlineClose/></button>
+                </form>
+            ):( <span>{todos.title}</span>)}
+           {!isEditMood ?
+           (
             <div className="d-flex gap-2">
-                <button className="btn btn-success" >Düzenle</button>
+                <button disabled={isEditMood} onClick={()=>setIsEditMood(true)} className="btn btn-success" >Düzenle</button>
                 <button className="btn btn-danger" onClick={handleDelete}>Sil</button>
             </div>
+
+           ):
+           (<span></span>)}
+            
         </li>
 
     );
