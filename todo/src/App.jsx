@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Loading from './components/Loading';
 import ListItem from './components/ListItem';
+import {v4 as uuidv4} from 'uuid';
 
 axios.defaults.baseURL='http://localhost:3000';
 
@@ -14,14 +15,19 @@ useEffect(()=>{
 
 const HandleSubmit =(e)=>{
   e.preventDefault();
+  if(!e.target[0].value){
+    alert("Lütfen başliği giriniz")
+    return
+  }
   const newTodo={
-    id:new Date().getTime(),
+    id:uuidv4(),
     title:e.target[0].value,
     date:new Date(),
     isDone:false,
   }
   axios.post(`/todos`,newTodo)
-  .then(()=>setTodos([...todos,newTodo]));
+  .then(()=>setTodos([...todos,newTodo]))
+  
   
 
 }
@@ -35,7 +41,7 @@ const HandleSubmit =(e)=>{
       </form>
 
       <ul className='list-group'>
-        {/*Apidan cevap beklerken.Eğer null isa Yülleniyor yazar */}
+        {/*Apidan cevap beklerken.Eğer null isa Yükleniyor çalişir */}
         {todos === null && <Loading/>}
         {/*eğer todo true isa  todos dizisini map ile döner ve listeler */}
         {todos && todos.map((todo)=>
