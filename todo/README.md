@@ -1,8 +1,74 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Yapılacaklar Listesi Uygulaması
 
-Currently, two official plugins are available:
+Bu proje, basit bir yapılacaklar listesi uygulamasını oluşturmak için React ve Axios kullanılarak geliştirilmiştir. Bu uygulama, kullanıcıların yapılacak görevleri eklemelerine, düzenlemelerine, işaretleme veya silmelerine olanak tanır.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Özellikler
+
+- Yapılacak görev ekleyebilme
+- Varolan görevleri düzenleme
+- Görevleri işaretleme (tamamlandı olarak işaretleme)
+- Görevleri silme
+
+## Nasıl Kullanılır
+
+1. Projeyi klonlayın:
+
+   ```bash
+   git clone https://github.com/Yulduzb/To-Do-List-React-Project.git
+
+2.   cd todo
+3.   npm install
+4.   npm run dev
+
+![](../todo/src/assets/todo.gif)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Todo List 
+
+Bu İçerisinde bir adet README dosyası, bir adet de index.html barındırıyor.
+
+![github](figures/github.png)
+
+## Installation
+
+Öncelikle projeyi clonelayın. (Buraya sizin reponuzdan aldığınız link gelecek)
+
+```bash
+git clone 
+```
+
+## Usage
+
+Projeyi cloneladıktan sonra Visual Studio Code programında açınız.
+
+
+
+
