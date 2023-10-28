@@ -21,7 +21,7 @@ Bu proje, basit bir yapılacaklar listesi uygulamasını oluşturmak için React
 3.   npm install
 4.   npm run dev
 
-![](../todo/src/assets/todo.gif)
+![](../TodoList/todo/src/assets/todo.gif)
 
 
 
