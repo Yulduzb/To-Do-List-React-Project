@@ -36,7 +36,7 @@ useEffect(()=>{
 
 
 }
-,[pages]);
+,[pages,options]);
 
 const HandleSubmit =(e)=>{
   e.preventDefault();

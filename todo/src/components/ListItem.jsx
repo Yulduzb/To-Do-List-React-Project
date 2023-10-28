@@ -15,7 +15,7 @@ axios.delete(`todos/${todos.id}`)
    const fitered= allTodos.filter((item)=>item.id !== todos.id);
    setTodos(fitered)
 })
-.catch(err => alert("Bir hata oluştu..."))
+.catch(()=> alert("Bir hata oluştu..."))
 }
 
 const handleChange=()=>{
