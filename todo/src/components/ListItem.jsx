@@ -28,6 +28,24 @@ const handleChange=()=>{
     
     
 }
+
+const handleEdit=(event)=>{
+event.preventDefault()
+const newTitle=(event.target[0].value)
+const edited={...todos,title:newTitle}
+axios.put(`/todos/${todos.id}`,edited)
+.then(()=>{
+   const newTodos= allTodos.map((item)=>
+    item.id === edited.id ? edited : item
+
+   );
+   setTodos(newTodos);
+   setIsEditMood(false);
+});
+}
+
+
+
     return (
         <li className="d-flex justify-content-between aligin-items-center list-group-item">
             <div className="d-flex gap-2 ">
@@ -38,10 +56,10 @@ const handleChange=()=>{
 
             </div>
             {isEditMood ? (
-                <form className='d-flex gap-3' >
+                <form onSubmit={handleEdit} className='d-flex gap-3' >
                 <input type="text" className='form-control shadow' defaultValue={todos.title}/>
                 <button type='Submit' className='btn btn-success px-4 '><AiOutlineCheck/></button>
-                <button className='btn btn-warning px-4'><AiOutlineClose/></button>
+                <button type="button" onClick={()=>setIsEditMood(false)} className='btn btn-warning px-4'><AiOutlineClose/></button>
                 </form>
             ):( <span>{todos.title}</span>)}
            {!isEditMood ?
